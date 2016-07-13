@@ -1,0 +1,243 @@
+@charset "utf-8";
+
+/* reset */
+body {
+  margin: 0;
+  padding: 0;
+}
+
+p, h1, h2, h3, h4, h5, h6, ul, ol, li, dl, dt, dd, table, th, td, form, fieldset, legend, input, textarea, button, select, iframe {
+  margin: 0;
+  padding: 0;
+}
+
+body, input, textarea, select, button, table {
+  font-family: '맑은 고딕', Malgun Gothic, '돋움', Dotum, '굴림', Gulim, Helvetica, sans-serif;
+  font-size: 12px;
+  color: #333;
+}
+
+html {
+  height: 100%;
+}
+
+img, fieldset {
+  border: 0;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+em, address {
+  font-style: normal;
+}
+
+img {
+  vertical-align: top;
+}
+
+a {
+  text-decoration: none;
+}
+
+article, aside, dialog, footer, header, section, footer, nav, figure, figcaption, main {
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+
+button {
+  border: 0 none;
+  background: transparent;
+  cursor: pointer;
+
+  &::-moz-focus-inner {
+    padding: 0;
+    border: 0;
+  }
+
+  vertical-align: middle;
+}
+
+select, input {
+  vertical-align: middle;
+}
+
+hr, legend {
+  display: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+textarea {
+  resize: none;
+  border: none;;
+}
+
+caption {
+  width: 0;
+  height: 0;
+  line-height: 0;
+  font-size: 0;
+  text-indent: -999em;
+  overflow: hidden;
+}
+
+/* common */
+.blind {
+  visibility: hidden;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  font-size: 0;
+  line-height: 0;
+}
+
+.fz0 { /* 자식요소 inline-block 공백 제거 */
+  font-size: 0;
+}
+
+.ib {
+	display: inline-block;
+}
+
+
+/* layout */
+.wrap {
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+
+/* header */
+#header {
+	position: relative;
+  text-align: center;
+
+  h1 {
+  display: inline-block;
+  width: 76.5px;
+  height: 36.5px;
+  margin: 5.5px 0 5px;
+
+	  a {
+	  	display: block;
+	  	width: 100%;
+	  	height: 100%;
+	  	background: url(../../resources/images/innovation/img_logo.png) no-repeat;
+	  	background-size: cover;
+	  }
+  }
+
+  .btn_menu {
+  	position: absolute;
+  	left: 0;
+  	top: 0;
+  	width: 52px;
+  	height: 47.5px;
+  	background: url(../../resources/images/innovation/btn_menu.png) no-repeat 50% 50%;
+  	background-size: 25px;
+  }
+
+  .link_login, .link_myinfo {
+  	position: absolute;
+  	right: 15px;
+  	top: 9px;
+  	width: 30px;
+  	height: 30px;
+  	background: url(../../resources/images/innovation/sp_top_login.png) no-repeat 100% 0;
+  	background-size: 67.5px;
+  }
+
+  .link_myinfo {
+  	background-position: 0 0;
+  }
+}
+
+/* footer */
+#footer {
+	position: relative;
+  clear: both;
+  padding: 22px 0 30px 15px;
+  border-top: 1px solid #d7dee4;
+  color: #999;
+  font-size: 12px;
+  line-height: 1.5;
+
+  address {
+  	padding-bottom: 14px;
+  }
+
+  .tit {
+  	display: block;
+  	padding-bottom: 11px;
+  	color: #999;
+  	font-weight: normal;
+  }
+
+  .area_familysite {
+  	position: relative;
+
+    ul {
+      position: absolute;
+      bottom: 34px;
+      padding: 7px 0 4px;
+      width: 129px;
+      border: 1px solid #d4d8d9;
+      background: #fff;
+    }
+
+    a {
+      display: block;
+      width: 100%;
+      padding: 6px 0;
+      color: #999;
+      text-align: center;
+    }
+
+    .btn_family {
+	    width: 131px;
+	    padding: 9px 0 8px;
+	    font-size: 12px;
+	    color: #999;
+	    border: 1px solid #d4d8d9;
+	    text-indent: 15px;
+	    text-align: left;
+	    background: url(../../resources/images/innovation/bg_arrow_01.png) no-repeat 100% 50%;
+    	background-size: 23px;
+	  }
+	}
+  .area_sns {
+  	margin-left: 2.5px;
+  	vertical-align: middle;
+
+    a {
+      display: inline-block;
+      width: 34px;
+      height: 18.5px;
+      background: url(../../resources/images/innovation/sp_sns.png) no-repeat 14px 0;
+      background-size: 82.5px;
+
+      &.band {
+      	border-left: 1px solid #c5c8cc;
+      	border-right: 1px solid #c5c8cc;
+        background-position: -22px 0;
+      }
+
+      &.tistory {
+        background-position: -58px 0;
+      }
+    }
+  }
+
+  .copy {
+  	margin-top: 15px;
+  }
+}
