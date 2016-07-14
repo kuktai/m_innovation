@@ -1,3 +1,14 @@
-<button type="button" class="btn_menu"><span class="blind">메뉴</span></a></button>
+<button type="button" class="btn_menu" ng-click="is_open = true"><span class="blind">메뉴</span></a></button>
 <h1><a href="/views/innovation/oc/MWOC100S1.jsp"><span class="blind">360 플래닛</span></a></h1>
 <a href="javascript:;" class="link_myinfo"><span class="blind">로그인</span></a>
+
+<div id="wrap_menu" ng-class="{'_open':is_open}">
+	<div id="bg_navi"></div>
+	<nav id="navi">
+		<button type="button" class="btn_close" ng-click="is_open = false">닫기</button>
+		<a href="javascript:;">아이디어180</a>
+		<a href="javascript:;">아이디어180란?</a>
+		<a href="javascript:;">우수 아이디어 선정</a>
+		<a href="javascript:;">이노베이션360</a>
+	</nav>
+</div>
