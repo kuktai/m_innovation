@@ -1,4 +1,6 @@
 @charset "UTF-8";
+/* 변수 */
+/* green */
 /* reset */
 body {
   margin: 0;
@@ -37,6 +39,7 @@ img {
 }
 
 a {
+  color: #333;
   text-decoration: none;
 }
 
@@ -85,7 +88,21 @@ caption {
   overflow: hidden;
 }
 
+h1, h2 {
+  font-weight: normal;
+}
+
 /* common */
+.clearfix {
+  clear: both;
+}
+
+.clearfix:after {
+  display: block;
+  clear: both;
+  content: "";
+}
+
 .blind {
   visibility: hidden;
   overflow: hidden;
@@ -103,8 +120,23 @@ caption {
   font-size: 0;
 }
 
+.point1 {
+  color: #02a5af;
+}
+
 .ib {
   display: inline-block;
+}
+
+.line_clamp2, .line_clamp3 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.line_clamp3 {
+  -webkit-line-clamp: 3;
 }
 
 /* layout */
@@ -163,34 +195,89 @@ caption {
   position: absolute;
   top: 0px;
   left: 0px;
-  width: 303px;
+  width: 195px;
   height: 100%;
   z-index: 100;
-  background-color: #f8f8f8;
+  background-color: #fff;
   -webkit-backface-visibility: hidden;
   overflow-y: auto;
   overflow-scrolling: touch;
   -webkit-overflow-scrolling: touch;
-  -webkit-transform: translateX(-303px);
-  -ms-transform: translateX(-303px);
-      transform: translateX(-303px);
+  -webkit-transform: translateX(-195px);
+  -ms-transform: translateX(-195px);
+      transform: translateX(-195px);
   transition: 0.3s ease-in-out;
-  font-size: 12px;
   text-align: left;
+  letter-spacing: -1px;
 }
 
-#navi > a {
-  display: block;
-  width: 100%;
-  line-height: 30px;
-  margin: 10px 0;
+#navi .ci, #navi .btn_close, #navi a, #navi .li_depth2 {
+  background: url(../../resources/images/innovation/sp_menu.png) no-repeat;
+  background-size: 56px;
+}
+
+#navi .ci {
+  display: inline-block;
+  width: 56px;
+  height: 27.5px;
+  margin: 10px 0 10.5px 14.5px;
 }
 
 #navi .btn_close {
-  display: inline-block;
-  margin: 20px;
-  padding: 10px;
-  border: 1px solid #000;
+  position: absolute;
+  right: 12px;
+  top: 10px;
+  width: 27px;
+  height: 27px;
+  background-position: 3px -146px;
+}
+
+#navi > ul {
+  border-top: 1px solid #b4bcc5;
+}
+
+#navi > ul ul {
+  padding: 12px 0;
+  background: #ebf0f4;
+  border-bottom: 1px solid #d1d6dc;
+}
+
+#navi > ul ul .li_depth2 {
+  background-position: 171px -355px;
+}
+
+#navi [class^="depth1_"] {
+  display: block;
+  padding: 20px 0 17px 14px;
+  font-size: 17px;
+  color: #333;
+  background-position: 171px -208px;
+}
+
+#navi [class^="depth1_"] p {
+  margin-top: 7px;
+  color: #888;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+#navi [class^="depth2_"] {
+  display: block;
+  padding: 13px 0 13px 50px;
+  font-size: 13px;
+  color: #333;
+}
+
+#navi [class^="depth2_"] + [class^="depth2_"] {
+  margin-top: 6.5px;
+}
+
+#navi .depth2_180 {
+  background-position: 20px -47px;
+}
+
+#navi .depth2_good {
+  background-position: 20px -93px;
 }
 
 #wrap_menu._open #navi {
@@ -291,3 +378,170 @@ caption {
 #footer .copy {
   margin-top: 15px;
 }
+
+/* 메인 */
+.list_count_main > li {
+  float: left;
+  width: 50%;
+  padding: 20px 0 15px;
+  color: #fff;
+  font-size: 13px;
+  background: #26c2cc;
+  text-align: center;
+}
+
+.list_count_main > li.better {
+  background: #02a5af;
+}
+
+.list_count_main > li.better .tit {
+  background-position: 0 -39px;
+}
+
+.list_count_main > li .tit {
+  display: inline-block;
+  padding-left: 35px;
+  line-height: 28px;
+  font-weight: normal;
+  font-size: 13px;
+  background: url(../../resources/images/innovation/sp_list_count.png) no-repeat;
+  background-size: 29.5px;
+}
+
+.list_count_main > li span {
+  display: block;
+  font-size: 30px;
+  color: #92f8ff;
+}
+
+.box_360 {
+  padding: 28px 15px 0;
+}
+
+.box_360 h1 {
+  font-size: 17px;
+}
+
+.list_360 > li {
+  padding: 15px 0 20px;
+  line-height: 1.5;
+}
+
+.list_360 > li + li {
+  border-top: 1px solid #d7dee4;
+}
+
+.list_360 > li > a {
+  color: #333;
+}
+
+.list_360 > li img {
+  width: 100%;
+}
+
+.list_360 > li figcaption .tit {
+  display: block;
+  padding: 14px 0 12px;
+  font-size: 14px;
+}
+
+.box_180 {
+  padding: 28px 15px 0;
+  background: #ebf0f4;
+}
+
+.box_180 h1 {
+  margin-bottom: 13px;
+  font-size: 17px;
+}
+
+.article_comment + .article_comment {
+  margin-top: 13px;
+}
+
+.article_comment .box_contents {
+  position: relative;
+  padding: 14px 15px;
+  color: #333;
+  border-radius: 6px;
+  background: #fff;
+  box-shadow: 0px 2px 1px 0px rgba(125, 125, 125, 0.3);
+}
+
+.article_comment .box_contents .profile, .article_comment .box_contents .name, .article_comment .box_contents .data, .article_comment .box_contents .state, .article_comment .box_contents .btn_like, .article_comment .box_contents .link_reply {
+  display: inline-block;
+}
+
+.article_comment .box_contents .profile {
+  float: left;
+  margin-right: 15px;
+}
+
+.article_comment .box_contents .profile img {
+  width: 37.5px;
+}
+
+.article_comment .box_contents .name {
+  font-size: 13px;
+  max-width: 100px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  -o-text-overflow: ellipsis;
+}
+
+.article_comment .box_contents .date {
+  color: #999;
+}
+
+.article_comment .box_contents .area_count {
+  margin-top: 6px;
+}
+
+.article_comment .box_contents .area_count .btn_like, .article_comment .box_contents .area_count .link_reply {
+  padding-left: 18px;
+  color: #999;
+  line-height: 13px;
+  background: url(../../resources/images/innovation/sp_count.png) no-repeat 0 1px;
+  background-size: 13.5px;
+}
+
+.article_comment .box_contents .area_count .btn_like {
+  padding-right: 7px;
+  border-right: 1px solid #eaeaea;
+}
+
+.article_comment .box_contents .area_count .btn_like._on {
+  color: #02a5af;
+  /* background-position: 0 -23px; */
+}
+
+.article_comment .box_contents .area_count .link_reply {
+  margin-left: 7px;
+  background-position: 0 -22px;
+}
+
+.article_comment .box_contents .txt {
+  padding: 12px 0;
+}
+
+.article_comment .box_contents .area_tag {
+  margin-left: -4px;
+}
+
+.article_comment .box_contents .area_tag .tag {
+  display: inline-block;
+  margin: 5px 0 0 4px;
+  padding: 6px 8px 5px;
+  text-align: center;
+  color: #777;
+  font-size: 12px;
+  background: #ebf0f4;
+}
+
+.article_comment .box_contents .area_tag .tag + .tag {
+  margin-left: 4px;
+}
+
+/* e : .article_comment */
+/* 끝나는 주석은 중첩이 5개 이상일 경우 */

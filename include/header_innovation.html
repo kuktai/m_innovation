@@ -1,14 +1,29 @@
-<button type="button" class="btn_menu" ng-click="is_open = true"><span class="blind">메뉴</span></a></button>
+<button type="button" class="btn_menu" data-ng-click="is_open = true"><span class="blind">메뉴</span></a></button>
 <h1><a href="/views/innovation/oc/MWOC100S1.jsp"><span class="blind">360 플래닛</span></a></h1>
 <a href="javascript:;" class="link_myinfo"><span class="blind">로그인</span></a>
 
-<div id="wrap_menu" ng-class="{'_open':is_open}">
-	<div id="bg_navi"></div>
-	<nav id="navi">
-		<button type="button" class="btn_close" ng-click="is_open = false">닫기</button>
-		<a href="javascript:;">아이디어180</a>
-		<a href="javascript:;">아이디어180란?</a>
-		<a href="javascript:;">우수 아이디어 선정</a>
-		<a href="javascript:;">이노베이션360</a>
+<div id="wrap_menu" data-ng-class="{'_open':is_open}">
+	<div id="bg_navi" data-ng-click="is_open = false"></div>
+	<nav id="navi" class="fz0">
+		<button type="button" class="btn_close" data-ng-click="is_open = false"><span class="blind">닫기</span></button>
+		<span class="ci"><span class="blind">360 플래닛</span></span>
+		<ul>
+			<li>
+				<a href="javascript:;" class="depth1_180">
+					아이디어180˚
+					<p>여러분의 생각을 이야기<br />해주세요!</p>
+				</a>
+				<ul>
+					<li class="li_depth2"><a href="javascript:;" class="depth2_180">아이디어180란?</a></li>
+					<li class="li_depth2"><a href="javascript:;" class="depth2_good">우수 아이디어 선정</a></li>
+				</ul>
+			</li>
+			<li>
+				<a href="javascript:;" class="depth1_360">
+					이노베이션360˚
+					<p>여러분의 아이디어가<br />실현되었습니다.</p>	
+				</a>
+			</li>
+		</ul>
 	</nav>
 </div>
