@@ -167,5 +167,67 @@
 		<ng-include src="'./include/footer_innovation.html'"></ng-include>
 	</footer>
 </div><!-- e : .wrap -->
+
+<script>
+
+
+	$(document).on("click", ".btn_menu", function() {
+		var toggleAllMenu = function() {
+			var el = $("#nav"),
+					rightPx = parseInt(el.css("right"));
+			if ($('.menuList_bg').length == 0) {
+				var ts;
+				el.css("right", 0).on('touchstart touchmove', function(e) {
+					var touch = e.originalEvent.touches[0] || e.originalEvent.changedTouches[0];
+					if (e.type == 'touchstart') {
+						ts = touch.pageY;
+					} else if (e.type == 'touchmove') {
+						var pos = ts - touch.pageY;
+						if ((pos > 0 && el.prop('scrollHeight') == el.height() + el.scrollTop()) || (pos < 0 && el.scrollTop() == 0)) {
+							return false;
+						}
+					}
+					e.stopPropagation();
+				});
+				$("#wrap_menu").addClass('_open');
+				$("body").addClass('scroll_stop').append("<div class='menuList_bg' onclick='toggleAllMenu()'></div>");
+				$('.menuList_bg').on('mousewheel touchmove', function(e) {
+					return false;
+				});
+				if (document.location.href.indexOf('/sports/') > -1) bg.height(document.body.scrollHeight);
+			} else {
+				$('.menuList_bg').off('mousewheel touchmove');
+				$("body").removeClass('scroll_stop');
+				$("#wrap_menu").removeClass('_open');
+				el.css("right", -150).off('touchstart touchmove');
+
+				function elcheck() {
+					if (!el.is(':animated')) $('.menuList_bg').remove();
+					else setTimeout(elcheck, 200);
+				}
+				setTimeout(elcheck, 200);
+			}
+		};
+		toggleAllMenu();
+	});
+
+
+</script>
+<style>
+
+	.scroll_stop {
+		overflow: hidden;
+	}
+	.menuList_bg{    position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		z-index: 99;
+		background-color: #000;
+		opacity: .65;
+	}
+
+</style>
 </body>
 </html>
