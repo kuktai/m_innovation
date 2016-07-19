@@ -106,6 +106,14 @@ h1, h2 {
 }
 
 /* common */
+.tac {
+  text-align: center;
+}
+
+.tar {
+  text-align: right;
+}
+
 .clearfix {
   clear: both;
 
@@ -187,7 +195,6 @@ h1, h2 {
   max-width: 640px;
   height: 100%;
   margin: 0 auto;
-  overflow: hidden;
 }
 
 /* 링크 & 버튼 */
@@ -207,6 +214,10 @@ h1, h2 {
   font-size: 14px;
   text-align: center;
   background: #fff;
+
+  &.s {
+    padding: 7px 0 8px;
+  }
 
   &.g {
     color: #fff;
@@ -263,6 +274,12 @@ h1, h2 {
   text-indent: 20px;
   background: #fff url(../../resources/images/innovation/sp_form.png) no-repeat 100% -65px;
   background-size: (44px/2);
+
+  &.s { /* s = small */
+    height: 28px;
+    line-height: 28px;
+    background-position: 100% -73px;
+  }
 }
 
 .chk1 {
@@ -625,10 +642,18 @@ h1, h2 {
 
     .profile {
       float: left;
+      position: relative;
       margin-right: 15px;
 
-      img {
+      .img_profile {
         width: (75px/2);
+      }
+
+      .badge_good {
+        position: absolute;
+        top: 15px;
+        left: 24px;
+        width: (57px/2);
       }
     }
 
@@ -883,5 +908,145 @@ h1, h2 {
     position: absolute;
     top: 14.5px;
     right: 15px;
+  }
+}
+
+/* 아이디어 180 */
+.visual_180 {
+  position: relative;
+  display: table;
+  width: 100%;
+  background: #13171a url(../../resources/images/innovation/img_visual_01.png) no-repeat 50% 0;
+  background-size: auto 100%;
+  color: #fff;
+  
+  .inner {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    
+    > strong {
+      font-size: 22px;
+    }
+    
+    > p {
+      margin-top: 13px;
+      font-size: 13px;
+    }
+  }
+  
+  .btn_scroll {
+    position: absolute;
+    left: 50%;
+    bottom: 15px;
+    width: 44px;
+    height: 44px;
+    margin-left: -22px;
+    background: url(../../resources/images/innovation/btn_scroll.png) no-repeat 50% 50%;
+    background-size: (62px/2);
+  }
+}
+
+
+#main.main_180 {
+  background: #fff;
+
+  .area_link {
+    padding: 20px 0 22px;
+    background: #02a5af;
+
+    .link_idea {
+      display: block;
+      width: 100%;
+      color: #fff;
+      font-size: 14px;
+      text-align: center;
+    }
+  }
+}
+
+.area_search {
+  position: relative;
+  padding: 20px 15px;
+
+  .tf_search {
+    display: inline-block;
+    width: 100%;
+    padding: 12px 40px;
+    border: 2px solid #878f96;
+    box-sizing: border-box;
+    background: url(../../resources/images/innovation/icon_sharp.png) no-repeat 20px 50%;
+    background-size: (19px/2);
+  }
+
+  .btn_search {
+    position: absolute;
+    right: 17px;
+    top: 21px;
+    width: 42px;
+    height: 42px;
+    line-height: 41px;
+    background: url(../../resources/images/innovation/icon_search.png) no-repeat 50% 50%;
+    background-size: (34px/2);
+  }
+}
+
+.wrap_sort {
+  padding: 15px 0 15px 20px;
+  border-top: 1px solid #d7dee4;
+  border-bottom: 1px solid #d7dee4;
+
+  .bar {
+    display: inline-block;
+    width: 1px;
+    height: 13px;
+    margin: 0 10px;
+    vertical-align: middle;
+    background: #e7eaed;
+  }
+
+  .btn_sort {
+    display: inline-block;
+    padding-left: 17px;
+    font-size: 13px;
+    color: #888;
+    background: url(../../resources/images/innovation/sp_sort.png) no-repeat 0 4px;
+    background-size: (24px/2);
+    vertical-align: middle;
+
+    &._seleted {
+      color: #333;
+      background-position: 0 -14px;
+    }
+  }
+
+  .area_result {
+    font-size: 13px;
+
+    .tag {
+      color: #999;
+    }
+  }
+}
+
+.box_noresult {
+  padding: 82px 0 57px;
+  text-align: center;
+  background: #ebf0f4;
+
+  .txt1 {
+    margin-bottom: 28px;
+    font-size: 19px;
+  }
+
+  img {
+    width: (118px/2);
+  }
+
+  & + .area_list {
+    margin: 0 -15px -20px;
+    padding: 15px 0 30px;
+    background: #fff;
+
   }
 }

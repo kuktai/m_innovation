@@ -6,7 +6,7 @@
 <link type="text/css" rel="stylesheet" href="./resources/css/innovation.css">
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.29/angular.min.js"></script>
 <script type="text/javascript" src="http://10.65.2.105:7777/resources/js/lib/jquery-1.8.3.min.js"></script>
-<title>360플래닛 - 라이프플래닛</title>
+<title>아이디어 180˚ 목록 - 라이프플래닛</title>
 </head>
 <body>
 <div class="wrap">
@@ -14,50 +14,59 @@
 		<ng-include src="'./include/header_innovation.html'"></ng-include>
 	</header>
 	<hr />
-
-	<div class="visual_main">
-		<img src="./resources/images/innovation/img_sample.png" alt="" style="width:100%" />
+	
+	<div class="visual_180">
+		<div class="inner">
+			<strong>아이디어 180˚</strong>
+			<p>사소한 이야기, 불만, 개선사항 어떤 이야기든 듣겠습니다.</p>
+		</div>
+		<button type="button" class="btn_scroll"><span class="blind">scroll</span></button>
 	</div>
 
-	<ul class="list_count_main clearfix">
-		<li class="all">
-			<strong class="tit">모든 아이디어</strong>
-			<span>1,000</span>
-		</li>
-		<li class="better">
-			<strong class="tit">개선 아이디어</strong>
-			<span>100</span>
-		</li>
-	</ul>
+	<main id="main" class="main_180">
+		<div class="area_link">
+			<a href="javascript:;" class="link_idea">여러분의 생각을 이야기 해주세요!</a>
+		</div>
 
-	<main id="main" class="main">
-		<section class="box_360">
-			<h1>라이프플래닛의 이노베이션 <span class="point1">360˚</span></h1>
-			<ul class="list_360 clearfix">
-				<li>
-					<a href="javascript:;">
-						<figure>
-							<img src="./resources/images/innovation/dummy_main_01.png" alt="" />
-							<figcaption>
-								<strong class="tit line_clamp2">내 생에 필수보험의 시작! 나의 리얼 플래너 2.0을 만나보세요.</strong>
-								<p class="line_clamp2">나의 리얼 플래너에 대해 보내주신 소중한 고객님의 아이디어를 통해 대해 보내주신 소중한 나의 리얼 플래너에 대해 보내주신 소중한 고객님의 아이디어를 통해 대해 보내주신 소중한</p>
-							</figcaption>
-						</figure>
-					</a>
-				</li>
-				<li>
-					<a href="javascript:;">
-						<figure>
-							<img src="./resources/images/innovation/dummy_main_01.png" alt="" />
-							<figcaption>
-								<strong class="tit line_clamp2">내 생에 필수보험의 시작! 나의 리얼 플래너 2.0을 만나보세요.</strong>
-								<p class="line_clamp2">나의 리얼 플래너에 대해 보내주신 소중한 고객님의 아이디어를 통해 대해 보내주신 소중한 나의 리얼 플래너에 대해 보내주신 소중한 고객님의 아이디어를 통해 대해 보내주신 소중한</p>
-							</figcaption>
-						</figure>
-					</a>
-				</li>
-			</ul>
-		</section><!-- e : .box_360 -->
+		<div role="search" class="area_search fz0">
+            <input type="text" class="tf_search" placeholder="검색어를 입력해주세요." />
+            <button typpe="button" class="btn_search"><span class="blind">검색</span></button> 
+        </div>
+
+		<article class="box_tag">
+            <h1>인기태그</h1>				
+            <ul class="fz0">
+                <li><a href="javascript:;">#아이디어</a></li>
+                <li><a href="javascript:;">#마이페이지</a></li>
+                <li><a href="javascript:;">#청약</a></li>
+                <li><a href="javascript:;">#설계</a></li>
+                <li><a href="javascript:;">#개선해주세요</a></li>
+                <li><a href="javascript:;">#모바일 사용성</a></li>
+                <li><a href="javascript:;">#불만</a></li>
+            </ul>
+        </article>
+
+        <div class="wrap_sort fz0">
+            <div class="area_sort">
+                <!-- [D] 버튼 선택 시 _selected 클래스 추가 -->
+                <button type="button" class="btn_sort _seleted">최신순</button>
+                <span class="bar"></span>
+                <button type="button" class="btn_sort">공감순</button>
+                <select class="sel_m s" style="width:100px;margin-left:18px">
+                    <option value="" selected="selected">상태</option>
+                    <option value="">대기중</option>
+                    <option value="">확인중</option>
+                    <option value="">개선중</option>
+                    <option value="">개선완료</option> 
+                    <option value="">개선불가</option>
+                </select>
+            </div>
+            
+            <!-- [D] 태그 검색 시 노출 -->
+            <div class="area_result">
+                <p><span class="tag">“#가입후기”</span> <span class="point1">20개</span>의 아이디어</p>
+            </div>
+        </div>
 
 		<section class="box_180">
 	        <h1>여러분의 새로운 아이디어 <span class="point1">180˚</span></h1>
@@ -65,6 +74,8 @@
 	            <div class="box_contents">
 	            	<div class="profile">
 		                <img src="./resources/images/innovation/dummy_profile_01.png" class="img_profile" alt="" />
+		                <!-- [D] 우수 아이디어일 경우 노출 -->
+		                <img src="./resources/images/innovation/icon_goodidea.png" class="badge_good" alt="우수아이디어" />
 		            </div>
 	                <span class="name">안*현</span>
 	                <span class="date">2016.05.02</span>
@@ -113,121 +124,103 @@
 	                </div>
 	            </div>
 	        </article>
-	        
+
+	        <!-- [D] 검색 결과 없을 시 노출 -->
+	        <div class="wrap_noresult">
+	            <div class="box_noresult">
+	                <p class="txt1">"검색결과가 없습니다"</p>
+	                <p class="icon"><img src="/resources/images/innovation/icon_noresult.png" alt="" /></p>
+	            </div>
+	            <div class="area_list tac">
+	                <a href="javascript:;" class="link_st1 s" style="width:80px">목록</a>
+	            </div>
+	        </div>
 	    </section><!-- e : .box_180 -->
-
-	    <aside class="aside">
-	        <article class="box_goodideas">
-	            <h1>3월 우수 아이디어 선정</h1>
-	            <a href="javascript:;" class="link_more">전체보기</a>
-	            <p class="txt point1">“선정된 모든분들께 축하드립니다.”</p>
-	            <ul class="fz0">
-	                <li>임*태</li>
-	                <li>임*태</li>
-	                <li>임*태</li>
-	                <li>임*태</li>
-	                <li>임*태</li>
-	                <li>임*태</li>
-	                <li>임*태</li>
-	                <li>임*태</li>
-	                <li>임*태</li>
-	                <li>임*태</li>
-	                <li>임*태</li>
-	                <li>임*태</li>
-	                <li>임*태</li>
-	                <li>임*태</li>
-	                <li>임*태</li>
-	                <li>임*태</li>
-	                <li>임*태</li>
-	                <li>임*태</li>
-	                <li>임*태</li>
-	                <li>임*태</li>
-	                <li>임*태</li>
-	                <li>임*태</li>
-	            </ul>
-	        </article>
-
-	        <article class="box_tag">
-	            <h1>인기태그</h1>				
-	            <ul class="fz0">
-	                <li><a href="javascript:;">#아이디어</a></li>
-	                <li><a href="javascript:;">#마이페이지</a></li>
-	                <li><a href="javascript:;">#청약</a></li>
-	                <li><a href="javascript:;">#설계</a></li>
-	                <li><a href="javascript:;">#개선해주세요</a></li>
-	                <li><a href="javascript:;">#모바일 사용성</a></li>
-	                <li><a href="javascript:;">#불만</a></li>
-	            </ul>
-	        </article>
-	    </aside><!-- e : .aside -->
     </main>
     <hr />
 
 	<footer id="footer" class="footer">
 		<ng-include src="'./include/footer_innovation.html'"></ng-include>
 	</footer>
-</div><!-- e : .wrap -->
+	
+	<script type="text/javascript">
+	/*alert(1);*/
+	
+	$(document).ready(function(){
+		var wH = $(window).height();
+		var boxScroll = $(".wrap");
+		boxScroll.css({
+			'height': wH,
+			'overflow-y': 'auto',
+			'overflow-x': 'hidden'
+		});
+		var box180 = $(".visual_180");
+		$(".visual_180").css({height: wH - 47});
 
-<script>
+		boxScroll.bind('scroll', function(e) {
+			console.log(1);
+			
+            var val = $(this).scrollTop();
+            if (val < 280 || val > 3000) {
+                $('.area_link').hide();
+                
+            } else {
+                $('.area_link').html('scroll top: ' + val + 'px').show();
+                //alert(2);
+            }
+
+        });
 
 
-	$(document).on("click", ".btn_menu", function() {
-		var toggleAllMenu = function() {
-			var el = $("#nav"),
-					rightPx = parseInt(el.css("right"));
-			if ($('.menuList_bg').length == 0) {
-				var ts;
-				el.css("right", 0).on('touchstart touchmove', function(e) {
-					var touch = e.originalEvent.touches[0] || e.originalEvent.changedTouches[0];
-					if (e.type == 'touchstart') {
-						ts = touch.pageY;
-					} else if (e.type == 'touchmove') {
-						var pos = ts - touch.pageY;
-						if ((pos > 0 && el.prop('scrollHeight') == el.height() + el.scrollTop()) || (pos < 0 && el.scrollTop() == 0)) {
-							return false;
-						}
-					}
-					e.stopPropagation();
-				});
-				$("#wrap_menu").addClass('_open');
-				$("body").addClass('scroll_stop').append("<div class='menuList_bg' onclick='toggleAllMenu()'></div>");
-				$('.menuList_bg').on('mousewheel touchmove', function(e) {
-					return false;
-				});
-				if (document.location.href.indexOf('/sports/') > -1) bg.height(document.body.scrollHeight);
-			} else {
-				$('.menuList_bg').off('mousewheel touchmove');
-				$("body").removeClass('scroll_stop');
-				$("#wrap_menu").removeClass('_open');
-				el.css("right", -150).off('touchstart touchmove');
+		/*var wH = $(window).height();
+		var boxScroll = $(".wrap");
+		boxScroll.css({
+			'height': wH,
+			'overflow-y': 'auto',
+			'overflow-x': 'hidden'
+		});
+		var box180 = $(".visual_180");
+		$(".visual_180").css({height: wH - 47});
 
-				function elcheck() {
-					if (!el.is(':animated')) $('.menuList_bg').remove();
-					else setTimeout(elcheck, 200);
+		var scrollNum = 0;
+		box180.on("mousedown touchstart",function(){
+			scrollNum = boxScroll.scrollTop();
+		});
+
+	
+		box180.on("mouseup touchend",function(){		
+			if(scrollNum < boxScroll.scrollTop()){
+				if(boxScroll.scrollTop() > 0 && boxScroll.scrollTop() < wH){
+					boxScroll.stop().animate({
+						scrollTop: wH
+					});
 				}
-				setTimeout(elcheck, 200);
-			}
-		};
-		toggleAllMenu();
+			}else if(scrollNum > boxScroll.scrollTop()){
+				if(boxScroll.scrollTop() > 0 && boxScroll.scrollTop() < wH){
+					boxScroll.stop().animate({
+						scrollTop: "0"
+					});
+				}
+			}		
+		});*/
+		
+		$(document).on("click", ".btn_scroll", function() {
+			boxScroll.stop().animate({
+				scrollTop: wH
+			});
+			boxScroll.css({
+				'overflow': 'auto'
+			});
+		});
+
+
+
+		
 	});
 
+	</script>
+</div><!-- e : .wrap -->
 
-</script>
-<style>
 
-	.scroll_stop {
-		overflow: hidden;
-	}
-	.menuList_bg{    position: fixed;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-		z-index: 99;
-		background-color: #000;
-		opacity: .65;
-	}
-
-</style>
 </body>
 </html>

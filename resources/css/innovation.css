@@ -100,6 +100,14 @@ h1, h2 {
 }
 
 /* common */
+.tac {
+  text-align: center;
+}
+
+.tar {
+  text-align: right;
+}
+
 .clearfix {
   clear: both;
 }
@@ -181,7 +189,6 @@ h1, h2 {
   max-width: 640px;
   height: 100%;
   margin: 0 auto;
-  overflow: hidden;
 }
 
 /* 링크 & 버튼 */
@@ -201,6 +208,10 @@ h1, h2 {
   font-size: 14px;
   text-align: center;
   background: #fff;
+}
+
+.link_st1.s {
+  padding: 7px 0 8px;
 }
 
 .link_st1.g {
@@ -259,6 +270,13 @@ h1, h2 {
   text-indent: 20px;
   background: #fff url(../../resources/images/innovation/sp_form.png) no-repeat 100% -65px;
   background-size: 22px;
+}
+
+.sel_m.s {
+  /* s = small */
+  height: 28px;
+  line-height: 28px;
+  background-position: 100% -73px;
 }
 
 .chk1 input[type="checkbox"] {
@@ -611,11 +629,19 @@ h1, h2 {
 
 .article_comment .box_contents .profile {
   float: left;
+  position: relative;
   margin-right: 15px;
 }
 
-.article_comment .box_contents .profile img {
+.article_comment .box_contents .profile .img_profile {
   width: 37.5px;
+}
+
+.article_comment .box_contents .profile .badge_good {
+  position: absolute;
+  top: 15px;
+  left: 24px;
+  width: 28.5px;
 }
 
 .article_comment .box_contents .name {
@@ -863,4 +889,155 @@ h1, h2 {
   position: absolute;
   top: 14.5px;
   right: 15px;
+}
+
+/* 아이디어 180 */
+.visual_180 {
+  position: relative;
+  display: table;
+  width: 100%;
+  background: #13171a url(../../resources/images/innovation/img_visual_01.png) no-repeat 50% 0;
+  background-size: auto 100%;
+  color: #fff;
+}
+
+.visual_180 .inner {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+}
+
+.visual_180 .inner > strong {
+  font-size: 22px;
+}
+
+.visual_180 .inner > p {
+  margin-top: 13px;
+  font-size: 13px;
+}
+
+.visual_180 .btn_scroll {
+  position: absolute;
+  left: 50%;
+  bottom: 15px;
+  width: 44px;
+  height: 44px;
+  margin-left: -22px;
+  background: url(../../resources/images/innovation/btn_scroll.png) no-repeat 50% 50%;
+  background-size: 31px;
+}
+
+#main.main_180 {
+  position: relative;
+  padding-top: 60px;
+  background: #fff;
+}
+
+#main.main_180 .area_link {
+  z-index: 1;
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 20px 0 22px;
+  background: #02a5af;
+
+  &.absolute {
+    position: absolute;
+  }
+}
+
+#main.main_180 .area_link .link_idea {
+  display: block;
+  width: 100%;
+  color: #fff;
+  font-size: 14px;
+  text-align: center;
+}
+
+.area_search {
+  position: relative;
+  padding: 20px 15px;
+}
+
+.area_search .tf_search {
+  display: inline-block;
+  width: 100%;
+  padding: 12px 40px;
+  border: 2px solid #878f96;
+  box-sizing: border-box;
+  background: url(../../resources/images/innovation/icon_sharp.png) no-repeat 20px 50%;
+  background-size: 9.5px;
+}
+
+.area_search .btn_search {
+  position: absolute;
+  right: 17px;
+  top: 21px;
+  width: 42px;
+  height: 42px;
+  line-height: 41px;
+  background: url(../../resources/images/innovation/icon_search.png) no-repeat 50% 50%;
+  background-size: 17px;
+}
+
+.wrap_sort {
+  padding: 15px 0 15px 20px;
+  border-top: 1px solid #d7dee4;
+  border-bottom: 1px solid #d7dee4;
+}
+
+.wrap_sort .bar {
+  display: inline-block;
+  width: 1px;
+  height: 13px;
+  margin: 0 10px;
+  vertical-align: middle;
+  background: #e7eaed;
+}
+
+.wrap_sort .btn_sort {
+  display: inline-block;
+  padding-left: 17px;
+  font-size: 13px;
+  color: #888;
+  background: url(../../resources/images/innovation/sp_sort.png) no-repeat 0 4px;
+  background-size: 12px;
+  vertical-align: middle;
+}
+
+.wrap_sort .btn_sort._seleted {
+  color: #333;
+  background-position: 0 -14px;
+}
+
+.wrap_sort .area_result {
+  font-size: 13px;
+}
+
+.wrap_sort .area_result .tag {
+  color: #999;
+}
+
+.box_noresult {
+  padding: 82px 0 57px;
+  text-align: center;
+  background: #ebf0f4;
+}
+
+.box_noresult .txt1 {
+  margin-bottom: 28px;
+  font-size: 19px;
+}
+
+.box_noresult img {
+  width: 59px;
+}
+
+.box_noresult + .area_list {
+  margin: 0 -15px -20px;
+  padding: 15px 0 30px;
+  background: #fff;
 }
