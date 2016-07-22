@@ -60,15 +60,13 @@ button {
   border: 0 none;
   background: transparent;
   cursor: pointer;
-  vertical-align: middle;
 }
-
 button::-moz-focus-inner {
   padding: 0;
   border: 0;
 }
 
-select, input {
+select, input, button {
   vertical-align: middle;
 }
 
@@ -100,6 +98,14 @@ h1, h2 {
 }
 
 /* common */
+.fl {
+  float: left;
+}
+
+.fr {
+  float: right;
+}
+
 .tac {
   text-align: center;
 }
@@ -111,7 +117,6 @@ h1, h2 {
 .clearfix {
   clear: both;
 }
-
 .clearfix:after {
   display: block;
   clear: both;
@@ -174,13 +179,49 @@ h1, h2 {
   width: 50%;
   box-sizing: border-box;
 }
-
 .area_btn .area_l {
   padding-right: 6px;
 }
-
 .area_btn .area_r {
   padding-left: 6px;
+}
+
+.btn_like, .link_reply, .btn_share2 {
+  padding-left: 18px;
+  color: #999;
+  vertical-align: middle;
+  font-size: 12px;
+  line-height: 13px;
+  background: url(../../resources/images/innovation/sp_count.png) no-repeat 0 1px;
+  background-size: 13.5px;
+}
+
+.btn_like._on {
+  color: #02a5af;
+}
+
+.link_reply {
+  background-position: 0 -17px;
+}
+
+.btn_share2 {
+  background-position: 0 -37px;
+}
+
+.area_tag {
+  margin-left: -4px;
+}
+.area_tag .tag {
+  display: inline-block;
+  margin: 5px 0 0 4px;
+  padding: 6px 8px 5px;
+  text-align: center;
+  color: #777;
+  font-size: 12px;
+  background: #ebf0f4;
+}
+.area_tag .tag + .tag {
+  margin-left: 4px;
 }
 
 /* 레이아웃 */
@@ -209,23 +250,19 @@ h1, h2 {
   text-align: center;
   background: #fff;
 }
-
 .link_st1.s {
   padding: 7px 0 8px;
 }
-
 .link_st1.g {
   color: #fff;
   border-color: #687681;
   background: #687681;
 }
-
 .link_st1.kakao {
   color: #333;
   border-color: #fbe300;
   background: #fbe300;
 }
-
 .link_st1.kakao span {
   display: inline-block;
   padding: 0 0 0 40px;
@@ -233,19 +270,50 @@ h1, h2 {
   background: url(../../resources/images/innovation/icon_btn_kakao.png) no-repeat;
   background-size: 25.5px;
 }
-
 .link_st1.fb {
   border-color: #2c4990;
   background: #2c4990;
   color: #fff;
 }
-
 .link_st1.fb span {
   display: inline-block;
   padding: 0 0 0 32px;
   line-height: 22px;
   background: url(../../resources/images/innovation/icon_btn_fb.png) no-repeat;
   background-size: 10px;
+}
+
+.btn_more {
+  display: block;
+  width: 100%;
+  padding: 9px 0 8px;
+  border: 2px solid #bac6d0;
+  text-align: center;
+  font-size: 14px;
+  color: #8b9aa7;
+}
+.btn_more span {
+  display: inline-block;
+  padding-right: 19px;
+  background: url(/resources/images/innovation/bg_btnmore.png) no-repeat 100% 50%;
+  background-size: 12px;
+}
+
+.btn_prev, .btn_next {
+  display: inline-block;
+  width: 43px;
+  height: 35px;
+  border: 1px solid #b1b6ba;
+  background: url(/resources/images/innovation/sp_prevnext.png) no-repeat 16px 50%;
+  background-size: 55px;
+}
+
+.btn_next {
+  background-position: -28px 50%;
+}
+
+.btn_prev + .btn_next {
+  margin-left: -1px;
 }
 
 /* form 요소 */
@@ -271,7 +339,6 @@ h1, h2 {
   background: #fff url(../../resources/images/innovation/sp_form.png) no-repeat 100% -65px;
   background-size: 22px;
 }
-
 .sel_m.s {
   /* s = small */
   height: 28px;
@@ -283,12 +350,10 @@ h1, h2 {
   position: absolute;
   left: -50000px;
 }
-
 .chk1 input[type="checkbox"]:checked + label {
   color: #26c2cc;
   background-position: 100% -29px;
 }
-
 .chk1 label {
   padding: 5px 27px 6px 0;
   color: #777;
@@ -301,22 +366,19 @@ h1, h2 {
 #header {
   text-align: center;
 }
-
-#header h1 {
+#header h1.logo {
   display: inline-block;
   width: 76.5px;
   height: 36.5px;
   margin: 5.5px 0 5px;
 }
-
-#header h1 a {
+#header h1.logo a {
   display: block;
   width: 100%;
   height: 100%;
   background: url(../../resources/images/innovation/img_logo.png) no-repeat;
   background-size: cover;
 }
-
 #header .btn_menu {
   position: absolute;
   left: 0;
@@ -326,7 +388,6 @@ h1, h2 {
   background: url(../../resources/images/innovation/btn_menu.png) no-repeat 50% 50%;
   background-size: 25px;
 }
-
 #header .link_login, #header .link_myinfo {
   position: absolute;
   right: 15px;
@@ -336,7 +397,6 @@ h1, h2 {
   background: url(../../resources/images/innovation/sp_top_login.png) no-repeat 100% 0;
   background-size: 67.5px;
 }
-
 #header .link_myinfo {
   background-position: 0 0;
 }
@@ -352,25 +412,22 @@ h1, h2 {
   -webkit-backface-visibility: hidden;
   overflow-y: auto;
   -webkit-transform: translateX(-195px);
-  -ms-transform: translateX(-195px);
-      transform: translateX(-195px);
+  transform: translateX(-195px);
+  -webkit-transition: 0.3s ease-in-out;
   transition: 0.3s ease-in-out;
   text-align: left;
   letter-spacing: -1px;
 }
-
 #navi .ci, #navi .btn_close, #navi a, #navi .li_depth2 {
   background: url(../../resources/images/innovation/sp_menu.png) no-repeat;
   background-size: 56px;
 }
-
 #navi .ci {
   display: inline-block;
   width: 56px;
   height: 27.5px;
   margin: 10px 0 10.5px 14.5px;
 }
-
 #navi .btn_close {
   position: absolute;
   right: 12px;
@@ -379,21 +436,17 @@ h1, h2 {
   height: 27px;
   background-position: 3px -146px;
 }
-
 #navi > ul {
   border-top: 1px solid #b4bcc5;
 }
-
 #navi > ul ul {
   padding: 12px 0;
   background: #ebf0f4;
   border-bottom: 1px solid #d1d6dc;
 }
-
 #navi > ul ul .li_depth2 {
   background-position: 171px -355px;
 }
-
 #navi [class^="depth1_"] {
   display: block;
   padding: 20px 0 17px 14px;
@@ -401,39 +454,32 @@ h1, h2 {
   color: #333;
   background-position: 171px -208px;
 }
-
 #navi [class^="depth1_"] p {
   margin-top: 7px;
   color: #888;
   font-size: 13px;
   line-height: 1.6;
 }
-
 #navi [class^="depth2_"] {
   display: block;
   padding: 13px 0 13px 50px;
   font-size: 13px;
   color: #333;
 }
-
 #navi [class^="depth2_"] + [class^="depth2_"] {
   margin-top: 6.5px;
 }
-
 #navi .depth2_180 {
   background-position: 20px -47px;
 }
-
 #navi .depth2_good {
   background-position: 20px -93px;
 }
 
 #wrap_menu._open #navi {
   -webkit-transform: translateX(0);
-  -ms-transform: translateX(0px);
-      transform: translateX(0px);
+  transform: translateX(0px);
 }
-
 #wrap_menu._open #bg_navi {
   position: fixed;
   top: 0;
@@ -455,22 +501,18 @@ h1, h2 {
   font-size: 12px;
   line-height: 1.5;
 }
-
 #footer address {
   padding-bottom: 14px;
 }
-
 #footer .tit {
   display: block;
   padding-bottom: 11px;
   color: #999;
   font-weight: normal;
 }
-
 #footer .area_familysite {
   position: relative;
 }
-
 #footer .area_familysite ul {
   position: absolute;
   bottom: 32px;
@@ -479,7 +521,6 @@ h1, h2 {
   border: 1px solid #d4d8d9;
   background: #fff;
 }
-
 #footer .area_familysite a {
   display: block;
   width: 100%;
@@ -487,7 +528,6 @@ h1, h2 {
   color: #999;
   text-align: center;
 }
-
 #footer .area_familysite .btn_family {
   width: 131px;
   padding: 9px 0 8px;
@@ -499,12 +539,10 @@ h1, h2 {
   background: url(../../resources/images/innovation/bg_arrow_01.png) no-repeat 100% 50%;
   background-size: 23px;
 }
-
 #footer .area_sns {
   margin-left: 2.5px;
   vertical-align: middle;
 }
-
 #footer .area_sns a {
   display: inline-block;
   width: 34px;
@@ -512,17 +550,14 @@ h1, h2 {
   background: url(../../resources/images/innovation/sp_sns.png) no-repeat 14px 0;
   background-size: 82.5px;
 }
-
 #footer .area_sns a.band {
   border-left: 1px solid #c5c8cc;
   border-right: 1px solid #c5c8cc;
   background-position: -22px 0;
 }
-
 #footer .area_sns a.tistory {
   background-position: -58px 0;
 }
-
 #footer .copy {
   margin-top: 15px;
 }
@@ -543,15 +578,12 @@ h1, h2 {
   background: #26c2cc;
   text-align: center;
 }
-
 .list_count_main > li.better {
   background: #02a5af;
 }
-
 .list_count_main > li.better .tit {
   background-position: 0 -39px;
 }
-
 .list_count_main > li .tit {
   display: inline-block;
   padding-left: 35px;
@@ -561,7 +593,6 @@ h1, h2 {
   background: url(../../resources/images/innovation/sp_list_count.png) no-repeat;
   background-size: 29.5px;
 }
-
 .list_count_main > li span {
   display: block;
   font-size: 30px;
@@ -572,7 +603,6 @@ h1, h2 {
   padding: 28px 15px 0;
   background: #fff;
 }
-
 .box_360 h1 {
   font-size: 17px;
 }
@@ -581,19 +611,15 @@ h1, h2 {
   padding: 15px 0 20px;
   line-height: 1.5;
 }
-
 .list_360 > li + li {
   border-top: 1px solid #d7dee4;
 }
-
 .list_360 > li > a {
   color: #333;
 }
-
 .list_360 > li img {
   width: 100%;
 }
-
 .list_360 > li figcaption .tit {
   display: block;
   padding: 14px 0 12px;
@@ -604,7 +630,6 @@ h1, h2 {
   padding: 28px 15px 20px;
   background: #ebf0f4;
 }
-
 .box_180 h1 {
   margin-bottom: 13px;
   font-size: 17px;
@@ -613,7 +638,6 @@ h1, h2 {
 .article_comment + .article_comment {
   margin-top: 13px;
 }
-
 .article_comment .box_contents {
   position: relative;
   padding: 14px 15px;
@@ -622,28 +646,26 @@ h1, h2 {
   background: #fff;
   box-shadow: 0px 2px 1px 0px rgba(125, 125, 125, 0.3);
 }
-
 .article_comment .box_contents .profile, .article_comment .box_contents .name, .article_comment .box_contents .data, .article_comment .box_contents .state, .article_comment .box_contents .btn_like, .article_comment .box_contents .link_reply {
   display: inline-block;
 }
-
 .article_comment .box_contents .profile {
   float: left;
   position: relative;
   margin-right: 15px;
 }
-
 .article_comment .box_contents .profile .img_profile {
   width: 37.5px;
 }
-
 .article_comment .box_contents .profile .badge_good {
   position: absolute;
   top: 15px;
   left: 24px;
   width: 28.5px;
 }
-
+.article_comment .box_contents .name, .article_comment .box_contents .date, .article_comment .box_contents .state {
+  vertical-align: middle;
+}
 .article_comment .box_contents .name {
   font-size: 13px;
   max-width: 100px;
@@ -652,89 +674,51 @@ h1, h2 {
   text-overflow: ellipsis;
   -o-text-overflow: ellipsis;
 }
-
 .article_comment .box_contents .date {
   margin-left: 11px;
-  vertical-align: 3px;
   color: #999;
 }
-
+.article_comment .box_contents .state img {
+  width: 64.5px;
+  margin-left: 15px;
+}
 .article_comment .box_contents .area_count {
   margin-top: 3px;
 }
-
-.article_comment .box_contents .area_count .btn_like, .article_comment .box_contents .area_count .link_reply {
-  padding-left: 18px;
-  color: #999;
-  line-height: 13px;
-  background: url(../../resources/images/innovation/sp_count.png) no-repeat 0 1px;
-  background-size: 13.5px;
-}
-
-.article_comment .box_contents .area_count .btn_like {
-  padding-right: 7px;
-  border-right: 1px solid #eaeaea;
-}
-
-.article_comment .box_contents .area_count .btn_like._on {
-  color: #02a5af;
-  /* background-position: 0 -23px; */
-}
-
-.article_comment .box_contents .area_count .link_reply {
-  margin-left: 7px;
-  background-position: 0 -21px;
-}
-
 .article_comment .box_contents .txt {
   padding: 12px 0;
   line-height: 1.5;
 }
 
-.article_comment .box_contents .area_tag {
-  margin-left: -4px;
-}
-
-.article_comment .box_contents .area_tag .tag {
-  display: inline-block;
-  margin: 5px 0 0 4px;
-  padding: 6px 8px 5px;
-  text-align: center;
-  color: #777;
-  font-size: 12px;
-  background: #ebf0f4;
-}
-
-.article_comment .box_contents .area_tag .tag + .tag {
-  margin-left: 4px;
-}
-
 /* e : .article_comment */
-/* 끝나는 주석은 중첩이 5개 이상일 경우 */
 .box_goodideas {
   position: relative;
-  padding: 20px 15px 35px;
+  padding: 20px 0 35px;
   border-top: 1px solid #d7dee4;
   background: #fff;
+  text-align: center;
 }
-
 .box_goodideas h1 {
+  padding-left: 15px;
+  text-align: left;
   font-size: 15px;
 }
-
+.box_goodideas .img_winner {
+  max-width: 320px;
+}
 .box_goodideas .link_more {
   position: absolute;
   top: 11px;
   right: 15px;
 }
-
 .box_goodideas .txt {
+  display: none;
   padding: 27px 0 25px;
   text-align: center;
   font-size: 13px;
 }
-
 .box_goodideas li {
+  display: none;
   display: inline-block;
   width: 25%;
   margin-top: 5px;
@@ -749,18 +733,15 @@ h1, h2 {
   border-top: 1px solid #d7dee4;
   background: #fff;
 }
-
 .box_tag h1 {
   margin-bottom: 15px;
   font-size: 15px;
 }
-
 .box_tag li {
   display: inline-block;
   margin-top: 5px;
   margin-left: 4px;
 }
-
 .box_tag li a {
   display: block;
   padding: 6px 8px 5px;
@@ -774,12 +755,10 @@ h1, h2 {
 .popup {
   position: relative;
 }
-
 .popup .tit_2 {
   padding-bottom: 13px;
   font-size: 15px;
 }
-
 .popup .pop_header {
   z-index: 1;
   position: fixed;
@@ -790,12 +769,10 @@ h1, h2 {
   background: #3a4a58;
   box-sizing: border-box;
 }
-
 .popup .pop_header .tit {
   font-size: 15px;
   color: #fff;
 }
-
 .popup .pop_header .btn_close {
   position: absolute;
   top: 7.5px;
@@ -805,11 +782,9 @@ h1, h2 {
   background: url(../../resources/images/innovation/btn_popup_close.png) no-repeat 50% 50%;
   background-size: 18px;
 }
-
 .popup .pop_main {
   padding: 65px 15px 25px;
 }
-
 .popup .area_btn {
   margin-top: 15px;
 }
@@ -824,24 +799,21 @@ h1, h2 {
     width: 500px;
   }
   .popup .pop_main {
+    height: -webkit-calc(100% - 40px);
     height: calc(100% - 40px);
     overflow: auto;
   }
 }
-
 /* 팝업(로그인) */
 .pop_login .link_st1 {
   width: 100%;
 }
-
 .pop_login .link_st1.kakao {
   margin-bottom: 10px;
 }
-
 .pop_login .link_st1 + .t_point1 {
   margin-top: 14px;
 }
-
 .pop_login .box_easy {
   padding-bottom: 40px;
 }
@@ -851,13 +823,11 @@ h1, h2 {
   position: relative;
   padding-left: 93px;
 }
-
 .wrap_tel .sel_m {
   position: absolute;
   left: 0;
   top: 0;
 }
-
 .wrap_tel + .t_point1 {
   margin: 14px 0 25px;
 }
@@ -867,16 +837,13 @@ h1, h2 {
   padding: 18px 15px 15px;
   border: 1px solid #dde3e8;
 }
-
 .box_agree + .box_agree {
   margin-top: -1px;
 }
-
 .box_agree h1 {
   padding-bottom: 15px;
   font-size: 14px;
 }
-
 .box_agree .area_agree {
   overflow: auto;
   padding: 13px;
@@ -884,7 +851,6 @@ h1, h2 {
   background: #ebf0f4;
   font-size: 12px;
 }
-
 .box_agree .chk1 {
   position: absolute;
   top: 14.5px;
@@ -900,22 +866,18 @@ h1, h2 {
   background-size: auto 100%;
   color: #fff;
 }
-
 .visual_180 .inner {
   display: table-cell;
   vertical-align: middle;
   text-align: center;
 }
-
 .visual_180 .inner > strong {
   font-size: 22px;
 }
-
 .visual_180 .inner > p {
   margin-top: 13px;
   font-size: 13px;
 }
-
 .visual_180 .btn_scroll {
   position: absolute;
   left: 50%;
@@ -927,28 +889,16 @@ h1, h2 {
   background-size: 31px;
 }
 
+/* 아이디어 180 */
 #main.main_180 {
-  position: relative;
-  padding-top: 60px;
   background: #fff;
 }
-
 #main.main_180 .area_link {
-  z-index: 1;
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
+  z-index: 10;
   width: 100%;
-  box-sizing: border-box;
   padding: 20px 0 22px;
   background: #02a5af;
-
-  &.absolute {
-    position: absolute;
-  }
 }
-
 #main.main_180 .area_link .link_idea {
   display: block;
   width: 100%;
@@ -961,7 +911,6 @@ h1, h2 {
   position: relative;
   padding: 20px 15px;
 }
-
 .area_search .tf_search {
   display: inline-block;
   width: 100%;
@@ -971,7 +920,6 @@ h1, h2 {
   background: url(../../resources/images/innovation/icon_sharp.png) no-repeat 20px 50%;
   background-size: 9.5px;
 }
-
 .area_search .btn_search {
   position: absolute;
   right: 17px;
@@ -988,7 +936,6 @@ h1, h2 {
   border-top: 1px solid #d7dee4;
   border-bottom: 1px solid #d7dee4;
 }
-
 .wrap_sort .bar {
   display: inline-block;
   width: 1px;
@@ -997,7 +944,6 @@ h1, h2 {
   vertical-align: middle;
   background: #e7eaed;
 }
-
 .wrap_sort .btn_sort {
   display: inline-block;
   padding-left: 17px;
@@ -1007,16 +953,13 @@ h1, h2 {
   background-size: 12px;
   vertical-align: middle;
 }
-
 .wrap_sort .btn_sort._seleted {
   color: #333;
   background-position: 0 -14px;
 }
-
 .wrap_sort .area_result {
   font-size: 13px;
 }
-
 .wrap_sort .area_result .tag {
   color: #999;
 }
@@ -1026,18 +969,161 @@ h1, h2 {
   text-align: center;
   background: #ebf0f4;
 }
-
 .box_noresult .txt1 {
   margin-bottom: 28px;
   font-size: 19px;
 }
-
 .box_noresult img {
   width: 59px;
 }
-
 .box_noresult + .area_list {
   margin: 0 -15px -20px;
   padding: 15px 0 30px;
   background: #fff;
 }
+
+.area_articlemore {
+  margin-top: 15px;
+}
+
+.header_detail {
+  position: relative;
+  border-bottom: 1px solid #b4bcc5;
+}
+.header_detail h1 {
+  font-size: 18px;
+  line-height: 48px;
+  color: #3a4a58;
+}
+.header_detail .link_prev {
+  z-index: 1;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 47.5px;
+  height: 47.5px;
+  background: url(../../resources/images/innovation/btn_header_prev.png) no-repeat 50% 50%;
+  background-size: 13px;
+}
+
+.area_info {
+  position: relative;
+  padding: 10px 15px;
+  border-bottom: 1px solid #b4bcc5;
+}
+.area_info .img_state {
+  width: 64.5px;
+}
+.area_info .name {
+  display: inline-block;
+  margin-left: 11px;
+  font-size: 14px;
+}
+.area_info .date {
+  position: absolute;
+  top: 12px;
+  right: 15px;
+  font-size: 12px;
+  color: #888;
+}
+
+.area_count .bar {
+  display: inline-block;
+  width: 1px;
+  height: 10.5px;
+  margin: 0 8px;
+  vertical-align: middle;
+  background: #eaeaea;
+}
+
+.box_detail .box_content {
+  padding: 14px 15px;
+}
+.box_detail .box_content .area_useridea {
+  padding: 15px 0 40px;
+  color: #444;
+  font-size: 14px;
+  line-height: 1.5;
+}
+.box_detail .area_opinion {
+  position: relative;
+  border-top: 1px solid #d7dee4;
+  border-bottom: 1px solid #d7dee4;
+}
+.box_detail .area_opinion .tit, .box_detail .area_opinion .comment {
+  font-size: 14px;
+  color: #444;
+}
+.box_detail .area_opinion .tit {
+  position: absolute;
+  left: 15px;
+  top: 18px;
+  padding-top: 30px;
+  background: url(../../resources/images/innovation/icon_comment.png) no-repeat 50% 0;
+  background-size: 27px;
+}
+.box_detail .area_opinion .comment {
+  vertical-align: top;
+  line-height: 1.5;
+  padding: 23px 15px 23px 100px;
+}
+.box_detail .area_btn {
+  padding: 15px 15px 40px;
+}
+
+/* 우수 아이디어 선정 */
+.wrap_idea {
+  padding: 30px 15px 70px;
+}
+.wrap_idea > .txt {
+  margin-bottom: 25px;
+  font-size: 13px;
+  color: #888;
+}
+
+.list_accordion {
+  border: 1px solid #d7dee4;
+  border-top: none;
+}
+.list_accordion .li .a {
+  display: block;
+  width: 100%;
+  line-height: 54px;
+  font-size: 14px;
+  color: #666;
+  border-top: 1px solid #d7dee4;
+  background: url(/resources/images/innovation/sp_idealist.png) no-repeat 100% 24px;
+  background-size: 30px;
+}
+.list_accordion .li .a .month {
+  display: inline-block;
+  width: 110px;
+  font-size: 16px;
+  color: #333;
+  text-align: center;
+}
+.list_accordion .li .a .txt {
+  display: inline-block;
+}
+.list_accordion .li .box_name {
+  display: none;
+  padding: 30px 0;
+  text-align: center;
+  border-top: 1px solid #d7dee4;
+  background: #ebf0f4;
+}
+.list_accordion .li .box_name .img_winner {
+  width: 100%;
+  max-width: 320px;
+}
+.list_accordion .li._on .a {
+  background-position: 100% -30px;
+}
+.list_accordion .li._on .box_name {
+  display: block;
+}
+.list_accordion .li._on .month, .list_accordion .li._on .txt {
+  color: #03a5b0;
+}
+
+/*# sourceMappingURL=innovation.css.map */

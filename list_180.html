@@ -125,6 +125,10 @@
 	            </div>
 	        </article>
 
+	        <div class="area_articlemore">
+                <button type="button" class="btn_more"><span>더보기</span></button>
+            </div>
+
 	        <!-- [D] 검색 결과 없을 시 노출 -->
 	        <div class="wrap_noresult">
 	            <div class="box_noresult">
@@ -143,79 +147,46 @@
 		<ng-include src="'./include/footer_innovation.html'"></ng-include>
 	</footer>
 	
-	<script type="text/javascript">
-	/*alert(1);*/
-	
+	<script type="text/javascript">	
 	$(document).ready(function(){
+
 		var wH = $(window).height();
 		var boxScroll = $(".wrap");
 		boxScroll.css({
 			'height': wH,
-			'overflow-y': 'auto',
-			'overflow-x': 'hidden'
+			'overflow-y': 'scroll',
+			'-webkit-overflow-scrolling': 'touch'
 		});
 		var box180 = $(".visual_180");
 		$(".visual_180").css({height: wH - 47});
 
-		boxScroll.bind('scroll', function(e) {
-			console.log(1);
-			
-            var val = $(this).scrollTop();
-            if (val < 280 || val > 3000) {
-                $('.area_link').hide();
-                
-            } else {
-                $('.area_link').html('scroll top: ' + val + 'px').show();
-                //alert(2);
-            }
+		var areaNum = $(".area_link").height()+42;
 
-        });
-
-
-		/*var wH = $(window).height();
-		var boxScroll = $(".wrap");
-		boxScroll.css({
-			'height': wH,
-			'overflow-y': 'auto',
-			'overflow-x': 'hidden'
+		boxScroll.scroll(function(){
+			if(boxScroll.scrollTop() >= wH){
+				$("#main").css({
+					paddingTop: areaNum+"px"
+				});
+				$(".area_link").css({
+					position: "fixed",
+					top: "0",
+					left: "0"
+				});
+			}else{
+				$("#main").css({
+					paddingTop: "0px"
+				});
+				$(".area_link").css({
+					position: "static"
+				});
+			}
 		});
-		var box180 = $(".visual_180");
-		$(".visual_180").css({height: wH - 47});
-
-		var scrollNum = 0;
-		box180.on("mousedown touchstart",function(){
-			scrollNum = boxScroll.scrollTop();
-		});
-
-	
-		box180.on("mouseup touchend",function(){		
-			if(scrollNum < boxScroll.scrollTop()){
-				if(boxScroll.scrollTop() > 0 && boxScroll.scrollTop() < wH){
-					boxScroll.stop().animate({
-						scrollTop: wH
-					});
-				}
-			}else if(scrollNum > boxScroll.scrollTop()){
-				if(boxScroll.scrollTop() > 0 && boxScroll.scrollTop() < wH){
-					boxScroll.stop().animate({
-						scrollTop: "0"
-					});
-				}
-			}		
-		});*/
 		
-		$(document).on("click", ".btn_scroll", function() {
+		$(".btn_scroll").on("click", function() {
 			boxScroll.stop().animate({
 				scrollTop: wH
 			});
-			boxScroll.css({
-				'overflow': 'auto'
-			});
 		});
-
-
-
-		
 	});
 
 	</script>
