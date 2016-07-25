@@ -224,6 +224,32 @@ h1, h2 {
   margin-left: 4px;
 }
 
+.box1 {
+  border: 1px solid #d7dee4;
+}
+
+.row {
+  padding: 16px 15px 18px;
+}
+.row + .row {
+  border-top: 1px solid #d7dee4;
+}
+.row .area_sub {
+  margin-top: 18px;
+  padding-top: 15px;
+  border-top: 1px dotted #d7dee4;
+}
+
+.dl1 {
+  font-size: 0;
+}
+.dl1 dt, .dl1 dd {
+  font-size: 14px;
+}
+.dl1 dd {
+  color: #666;
+}
+
 /* 레이아웃 */
 .wrap {
   position: relative;
@@ -326,6 +352,10 @@ h1, h2 {
   color: #666;
   text-indent: 15px;
   background: #fff;
+}
+
+.tfa1 {
+  width: 100%;
 }
 
 .sel_m {
@@ -1124,6 +1154,23 @@ h1, h2 {
 }
 .list_accordion .li._on .month, .list_accordion .li._on .txt {
   color: #03a5b0;
+}
+
+/* 작성완료 */
+.box_complete {
+  padding-top: 20px;
+}
+.box_complete .txt1 {
+  font-size: 20px;
+}
+.box_complete .txt2 {
+  padding-top: 10px;
+  font-size: 13px;
+  line-height: 1.5;
+  color: #666;
+}
+.box_complete .area_icon {
+  padding: 42px 40px;
 }
 
 /*# sourceMappingURL=innovation.css.map */
