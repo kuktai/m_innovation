@@ -40,10 +40,17 @@
 							<img src="./resources/images/innovation/dummy_main_01.png" alt="" />
 							<figcaption>
 								<strong class="tit line_clamp2">내 생에 필수보험의 시작! 나의 리얼 플래너 2.0을 만나보세요.</strong>
-								<p class="line_clamp2">나의 리얼 플래너에 대해 보내주신 소중한 고객님의 아이디어를 통해 대해 보내주신 소중한 나의 리얼 플래너에 대해 보내주신 소중한 고객님의 아이디어를 통해 대해 보내주신 소중한</p>
+								<p class="txt line_clamp2">나의 리얼 플래너에 대해 보내주신 소중한 고객님의 아이디어를 통해 대해 보내주신 소중한 나의 리얼 플래너에 대해 보내주신 소중한 고객님의 아이디어를 통해 대해 보내주신 소중한 나의 리얼 플래너에 대해 보내주신 소중한 고객님의 아이디어를 통해 대해 보내주신 소중한 나의 리얼 플래너에 대해 보내주신 소중한 고객님의 아이디어를 통해 대해 보내주신 소중한</p>
 							</figcaption>
 						</figure>
 					</a>
+					<div class="area_share">
+					    <button type="button" class="btn_share" aria-label="공유"></button>
+					    <div class="area_sns">
+						    <a href="javascript:;" aria-label="카카오톡" class="link_kakao"></a>
+						    <a href="javascript:;" aria-label="페이스북" class="link_facebook"></a>
+					    </div>
+					</div>
 				</li>
 				<li>
 					<a href="javascript:;">
@@ -51,10 +58,17 @@
 							<img src="./resources/images/innovation/dummy_main_01.png" alt="" />
 							<figcaption>
 								<strong class="tit line_clamp2">내 생에 필수보험의 시작! 나의 리얼 플래너 2.0을 만나보세요.</strong>
-								<p class="line_clamp2">나의 리얼 플래너에 대해 보내주신 소중한 고객님의 아이디어를 통해 대해 보내주신 소중한 나의 리얼 플래너에 대해 보내주신 소중한 고객님의 아이디어를 통해 대해 보내주신 소중한</p>
+								<p class="txt line_clamp2">나의 리얼 플래너에 대해 보내주신 소중한 고객님의 아이디어를 통해 대해 보내주신 소중한 나의 리얼 플래너에 대해 보내주신 소중한 고객님의 아이디어를 통해 대해 보내주신 소중한 나의 리얼 플래너에 대해 보내주신 소중한 고객님의 아이디어를 통해 대해 보내주신 소중한 나의 리얼 플래너에 대해 보내주신 소중한 고객님의 아이디어를 통해 대해 보내주신 소중한</p>
 							</figcaption>
 						</figure>
 					</a>
+					<div class="area_share">
+					    <button type="button" class="btn_share" aria-label="공유"></button>
+					    <div class="area_sns">
+						    <a href="javascript:;" aria-label="카카오톡" class="link_kakao"></a>
+						    <a href="javascript:;" aria-label="페이스북" class="link_facebook"></a>
+					    </div>
+					</div>
 				</li>
 			</ul>
 		</section><!-- e : .box_360 -->
@@ -64,7 +78,7 @@
 	        <article class="article_comment">
 	            <div class="box_contents">
 	            	<div class="profile">
-		                <img src="./resources/images/innovation/dummy_profile_01.png" class="img_profile" alt="" />
+		                <img src="./resources/images/innovation/img_profile_default.png" class="img_profile" alt="" />
 		            </div>
 	                <span class="name">안*현</span>
 	                <span class="date">2016.05.02</span>
@@ -79,9 +93,10 @@
 	                    		개선불가 : <img src="/resources/images/innovation/state_impossible.png" alt="개선불가" />
 	                   	-->
 	                </span>
-	                <div class="area_count">
+	                <div class="area_count fz0">
 	                	<!-- [D] 클릭 시 count올라가면 _on 클래스 추가 -->
 	                    <button type="button" class="btn_like _on">공감 <span>10</span></button>
+	                    <span class="bar"></span>
 	                    <a href="javascript:;" class="link_reply">댓글 <span>5</span></a>
 	                </div>	
 	                <p class="txt clearfix">
@@ -105,9 +120,10 @@
 	                <span class="state">
 	                	<img src="/resources/images/innovation/state_impossible.png" alt="개선불가" />
 	                </span>
-	                <div class="area_count">
+	                <div class="area_count fz0">
 	                	<!-- [D] 클릭 시 count올라가면 _on 클래스 추가 -->
 	                    <button type="button" class="btn_like _on">공감 <span>10</span></button>
+	                    <span class="bar"></span>
 	                    <a href="javascript:;" class="link_reply">댓글 <span>5</span></a>
 	                </div>	
 	                <p class="txt clearfix">
@@ -155,54 +171,52 @@
 <script>
 
 
-	$(document).on("click", ".btn_menu", function() {
-		var toggleAllMenu = function() {
-			var el = $("#nav"),
-					rightPx = parseInt(el.css("right"));
-			if ($('.menuList_bg').length == 0) {
-				var ts;
-				el.css("right", 0).on('touchstart touchmove', function(e) {
-					var touch = e.originalEvent.touches[0] || e.originalEvent.changedTouches[0];
-					if (e.type == 'touchstart') {
-						ts = touch.pageY;
-					} else if (e.type == 'touchmove') {
-						var pos = ts - touch.pageY;
-						if ((pos > 0 && el.prop('scrollHeight') == el.height() + el.scrollTop()) || (pos < 0 && el.scrollTop() == 0)) {
-							return false;
-						}
-					}
-					e.stopPropagation();
-				});
-				$("#wrap_menu").addClass('_open');
-				$("body").addClass('scroll_stop').append("<div class='menuList_bg' onclick='toggleAllMenu()'></div>");
-				$('.menuList_bg').on('mousewheel touchmove', function(e) {
-					return false;
-				});
-				if (document.location.href.indexOf('/sports/') > -1) bg.height(document.body.scrollHeight);
-			} else {
-				$('.menuList_bg').off('mousewheel touchmove');
-				$("body").removeClass('scroll_stop');
-				$("#wrap_menu").removeClass('_open');
-				el.css("right", -150).off('touchstart touchmove');
+	
 
-				function elcheck() {
-					if (!el.is(':animated')) $('.menuList_bg').remove();
-					else setTimeout(elcheck, 200);
+	$(function(){
+		$(document).on("click", ".btn_menu", function() {
+			$("#wrap_menu").addClass('_open');
+			$("body").addClass('scroll_stop');
+			$('.menuList_bg').show();
+		});
+		$(document).on("click", ".btn_close, .menuList_bg", function() {
+			$("#wrap_menu").removeClass('_open');
+			$("body").removeClass('scroll_stop');
+			$('.menuList_bg').hide();
+		});
+
+		/* function : 공유 버튼 */
+		function share_toggle(){
+			$('.btn_share').click(function(){
+
+				var $area_sns = $('.area_sns'), // 카카오톡, 페이스북 sns 박스
+				    $this = $(this),
+				    $this_next = $(this).next(),
+				    $btn_share = $('.btn_share');
+
+				if($this_next.is(":hidden")){
+					$btn_share.removeClass('_on');
+					$area_sns.hide();
+					$this_next.show();
+					$this.addClass('_on');
+				} else {
+					$this_next.hide();
+					$this.removeClass('_on');
 				}
-				setTimeout(elcheck, 200);
-			}
-		};
-		toggleAllMenu();
+			});
+		}
+		share_toggle();
 	});
-
 
 </script>
 <style>
 
 	.scroll_stop {
-		overflow: hidden;
+		position: fixed;
 	}
-	.menuList_bg{    position: fixed;
+	.menuList_bg{
+	    display: none;    
+		position: fixed;
 		top: 0;
 		left: 0;
 		width: 100%;
@@ -210,6 +224,8 @@
 		z-index: 99;
 		background-color: #000;
 		opacity: .65;
+		touch-action: none;
+		/*transform: translate3d(0px, 0px, 0px);*/
 	}
 
 </style>

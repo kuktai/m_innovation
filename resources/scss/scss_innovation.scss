@@ -142,6 +142,13 @@ h1, h2 {
   line-height: 0;
 }
 
+.ellipsis {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  -o-text-overflow: ellipsis;
+}
+
 .break {
   word-break: keep-all;
   word-wrap: break-word;
@@ -213,11 +220,36 @@ h1, h2 {
 }
 
 .link_reply {
-  background-position: 0 -17px;
+  background-position: 0 -19px;
 }
 
 .btn_share2 {
   background-position: 0 -37px;
+}
+
+.btn_share {
+  display: inline-block;
+  width: 41px;
+  height: 39px;
+  background: url(/resources/images/innovation/sp_btn_share.png) no-repeat;
+  background-size: (82px/2);
+
+  &._on {
+    background-position: 0 100%
+  }
+}
+
+.link_kakao, .link_facebook {
+  display: inline-block;
+  width: 41px;
+  height: 39px;
+  vertical-align: top;
+  background: url(/resources/images/innovation/sp_icon_sns.png) no-repeat;
+  background-size: (82px/2);
+}
+
+.link_facebook {
+  background-position: 0 100%;
 }
 
 .area_tag {
@@ -468,14 +500,15 @@ h1, h2 {
 }
 
 #navi {
-    position:fixed;top:0px;left:0px;bottom:0;width:195px;z-index: 100;background-color:#fff; -webkit-backface-visibility : hidden;
-    overflow-y: auto;
+    position:fixed;top:0px;left:0px;bottom:0;width:195px;z-index: 100;background-color:#fff;
+    overflow-y: scroll;
     -webkit-transform:translateX(-195px);
     transform:translateX(-195px);
     -webkit-transition: 0.3s ease-in-out;
     transition: 0.3s ease-in-out;
     text-align: left;
     letter-spacing: -1px;
+    touch-action: none;
 
   
   .ci, .btn_close, a, .li_depth2 {
@@ -491,15 +524,17 @@ h1, h2 {
   }
 
   .btn_close {
-    position: absolute;
+    /* position: absolute;
     right: 12px;
-    top: 10px;
+    top: 10px; */
+    float: right;
+    margin: 10px 12px 0 0;
     width: (54px/2);
     height: (54px/2);
     background-position: 3px -146px;
   }
 
-  > ul {
+  ul {
     border-top: 1px solid #b4bcc5;
     
     ul {
@@ -566,6 +601,7 @@ h1, h2 {
     z-index:99;
     background: rgba(0, 0, 0, 0.6);
     -webkit-backface-visibility : hidden;
+    touch-action: none;
   }
 }
 
@@ -700,10 +736,15 @@ h1, h2 {
   h1 {
     font-size: 17px;
   }
+
+  > .txt1 {
+    color: #888;
+  }
 }
 
 .list_360 {
   > li {
+    position: relative;
     padding: 15px 0 20px;
     line-height: 1.5;
 
@@ -724,6 +765,28 @@ h1, h2 {
         display: block;
         padding: 14px 0 12px;
         font-size: 14px;
+      }
+    }
+
+    .txt {
+      margin-right: 71px;
+    }
+  }
+
+  .area_share {
+    position: absolute;
+    bottom: 15px;
+    right: 0;
+    width: 41px;
+  
+    .area_sns {
+      display: none;
+      position: absolute;
+      bottom: 38px;
+      left: 0;
+  
+      .link_facebook {
+        margin-left: 0;
       }
     }
   }
@@ -1007,7 +1070,7 @@ h1, h2 {
 }
 
 /* 아이디어 180 */
-.visual_180 {
+.visual_180, .visual_360 {
   position: relative;
   display: table;
   width: 100%;
@@ -1040,6 +1103,10 @@ h1, h2 {
     background: url(../../resources/images/innovation/btn_scroll.png) no-repeat 50% 50%;
     background-size: (62px/2);
   }
+}
+
+.visual_360 {
+  background: #13171a url(../../resources/images/innovation/visual_360.png) no-repeat 50% 0;
 }
 
 /* 아이디어 180 */
@@ -1178,6 +1245,14 @@ h1, h2 {
   padding: 10px 15px;
   border-bottom: 1px solid #b4bcc5;
 
+  .area_tit {
+    margin-right: 70px;
+
+    .tit {
+      font-size: 15px;
+    }
+  }
+
   .img_state {
     width: 64.5px;
   }
@@ -1237,6 +1312,7 @@ h1, h2 {
       left: 15px;
       top: 18px;
       padding-top: 30px;
+      letter-spacing: -1px;
       background: url(../../resources/images/innovation/icon_comment.png) no-repeat 50% 0;
       background-size: (54px/2);
     }
@@ -1244,7 +1320,7 @@ h1, h2 {
     .comment {
       vertical-align: top;
       line-height: 1.5;
-      padding: 23px 15px 23px 100px;
+      padding: 19px 15px 23px 100px;
     }
   }
 
@@ -1339,5 +1415,13 @@ h1, h2 {
 
   .area_icon {
     padding: 42px 40px;
+  }
+}
+
+/* 이노베이션 360 */
+.main_360 {
+
+  .area_more {
+    padding: 10px 0 35px;
   }
 }
