@@ -171,6 +171,10 @@ h1, h2 {
   background-size: (24px/2);
 }
 
+.circle { /* 프로필 이미지 동그라미 형태로 생성 */
+  border-radius: 100%;
+}
+
 .ib {
 	display: inline-block;
 }
@@ -207,7 +211,7 @@ h1, h2 {
   color: #999;
   vertical-align: middle;
   font-size: 12px;
-  line-height: 13px;
+  line-height: 14px;
   background: url(../../resources/images/innovation/sp_count.png) no-repeat 0 1px;
   background-size: (27px/2);
 }
@@ -220,11 +224,11 @@ h1, h2 {
 }
 
 .link_reply {
-  background-position: 0 -19px;
+  background-position: 0 -18px;
 }
 
 .btn_share2 {
-  background-position: 0 -37px;
+  background-position: 0 -36px;
 }
 
 .btn_share {
@@ -490,12 +494,20 @@ h1, h2 {
   	top: 9px;
   	width: (60px/2);
   	height: (60px/2);
-  	background: url(../../resources/images/innovation/sp_top_login.png) no-repeat 100% 0;
+  	background: url(../../resources/images/innovation/sp_top_login.png) no-repeat -39px 0;
   	background-size: (135px/2);
   }
 
   .link_myinfo {
   	background-position: 0 0;
+  }
+
+  .link_logout {
+    position: absolute;
+    top: 17px;
+    right: 15px;
+    font-size: 13px;
+    color: #3a4a58;
   }
 }
 
@@ -854,17 +866,27 @@ h1, h2 {
     .date {
       margin-left: 11px;
       color: #999;
+
+      & + .state {
+        float: right;
+      }
     }
 
     .state {
+
       img {
         width: 64.5px;
-        margin-left: 15px;
       }
     }
 
     .area_count {
-      margin-top: 3px;
+      margin-top: 5px;
+
+      &.area_count2 {
+        display: inline-block;
+        margin: 0 0 0 10px;
+        vertical-align: middle;
+      }
     }
 
     .txt {
@@ -872,6 +894,39 @@ h1, h2 {
       line-height: 1.5;
     }
   }
+
+  .area_modify {
+    position: absolute;
+    top: 17.5px;
+    right: 10px;
+
+    .btn_open {
+      display: inline-block;
+      width: 33px;
+      height: 13px;
+      background: url(../../resources/images/innovation/icon_open.png) no-repeat 50% 50%;
+      background-size: (46px/2);
+    }
+
+    .area_layer {
+      display: none;
+      position: $ab;
+      top: 27px;
+      right: -8px;
+      width: 109px;
+      height: 87px;
+      padding-top: 4px;
+      background: url(../../resources/images/innovation/bg_layer_modify.png) no-repeat;
+      background-size: (215px/2);
+
+      button {
+        display: block;
+        padding-left: 52px;
+        line-height: 36px;
+        font-size: 14px;
+      }
+    }
+  }  
 } /* e : .article_comment */
 
 .box_goodideas {
@@ -1273,6 +1328,7 @@ h1, h2 {
 }
 
 .area_count {
+
   .bar {
     display: inline-block;
     width: 1px;
@@ -1280,6 +1336,27 @@ h1, h2 {
     margin: 0 8px;
     vertical-align: middle;
     background: #eaeaea;
+  }
+
+  .area_share {
+    position: $rela;
+    display: inline-block;
+
+    .area_sns {
+      display: none;
+      position: absolute;
+      top: 18px;
+      left: -31px;
+      width: 112px;
+      height: 71.5px;
+      padding: 15.5px 0 0 11px;
+      background: url(../../resources/images/innovation/bg_sns.png) no-repeat;
+      background-size: (224px/2);
+
+      .link_facebook {
+        margin-left: 7px;
+      }
+    }
   }
 
 }
@@ -1424,4 +1501,56 @@ h1, h2 {
   .area_more {
     padding: 10px 0 35px;
   }
+}
+
+/* 내 정보 */
+.visual_my {
+  display: table;
+  width: 100%;
+  height: 214px;
+  color: #fff;
+  font-size: 17px;
+  background: #2e383c;
+
+  .inner {
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+  }
+
+  .profile {
+    position: $rela;
+    margin-bottom: 14px;
+
+    .img_profile {
+      width: 110px;
+    }
+
+    .link_my {
+      z-index: 1;
+      position: $ab;
+      bottom: 4px;
+      right: 50%;
+      width: 30px;
+      height: 30px;
+      margin-right: -55px;
+      background: url(/resources/images/innovation/btn_modify.png) no-repeat;
+      background-size: (60px/2);
+    }
+  }
+
+  .name {
+    margin-bottom: 10px; 
+  }
+}
+
+.wrap_comment {
+  padding: 28px 15px 20px;
+  background: #ebf0f4;
+
+  > .tit {
+    margin-bottom: 14px;
+    font-size: 17px;
+  }
+
 }

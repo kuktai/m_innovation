@@ -33,8 +33,8 @@
                     <span class="bar"></span>
                     <a href="javascript:;" class="link_reply">댓글 <span>5</span></a>
                     <span class="bar"></span>
-                    <button type="button" class="btn_share2">공유</button>
-                    <div class="area_share" style="display:none">
+                    <div class="area_share">
+	                    <button type="button" class="btn_share2">공유</button>
                         <div class="area_sns fz0">
 						    <a href="javascript:;" aria-label="카카오톡" class="link_kakao"></a>
 						    <a href="javascript:;" aria-label="페이스북" class="link_facebook"></a>
@@ -72,8 +72,10 @@
 	</footer>
 	
 	<script type="text/javascript">	
-	
-
+		/* 공유 버튼 */
+		$(document).on("click", ".btn_share2", function() {
+			$(".area_sns").toggle();
+		});
 	</script>
 </div><!-- e : .wrap -->
 
