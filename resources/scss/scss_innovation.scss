@@ -162,12 +162,12 @@ h1, h2 {
   color: #02a5af;
 }
 
-.t_point1 { /* t = text */
+.refer { /* t = text */
   padding-left: 16px;
   line-height: 1.5;
   font-size: 12px;
   color: #666;
-  background: url(../../resources/images/innovation/icon_t_point1.png) no-repeat 0 3px;
+  background: url(../../resources/images/innovation/icon_refer.png) no-repeat 0 3px;
   background-size: (24px/2);
 }
 
@@ -307,6 +307,24 @@ h1, h2 {
 
 
 /* 레이아웃 */
+.scroll_stop {
+  position: fixed;
+  width: 100%;
+}
+
+.menuList_bg{
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 99;
+  background-color: #000;
+  opacity: .65;
+  touch-action: none;
+}
+
 .wrap {
   position: relative;
   max-width: 640px;
@@ -699,6 +717,45 @@ h1, h2 {
 }
 
 /* 메인 */
+.visual_main{
+
+  .slidewrap{
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+
+    ul.swiper-wrapper{
+      width: 999999%;
+      height: 100%;
+
+      li{
+        float: left;
+        text-align: center;
+        line-height: 0;
+      }
+    }
+
+    .dot_box{
+      position: $ab;
+      bottom: 15px;
+      width: 100%;
+      text-align:center;
+
+      .swiper-pagination-bullet {
+        display: $in-blo;
+        width: 23px;
+        height: 2px;
+        margin: 0 2.5px;
+        background: #fff;
+      }
+
+      .swiper-pagination-bullet-active {
+        background:#26c2cc;
+      }
+    }
+  }
+}
+
 #main.main {
   padding-bottom: 25px;
   border-bottom: 1px solid #d7dee4;
@@ -1069,7 +1126,7 @@ h1, h2 {
       margin-bottom: 10px;
     }
 
-    & + .t_point1 {
+    & + .refer {
       margin-top: 14px;
     }
   }
@@ -1090,7 +1147,7 @@ h1, h2 {
     top: 0;
   }
 
-  & + .t_point1 {
+  & + .refer {
     margin: 14px 0 25px;
   }
 }
@@ -1276,10 +1333,11 @@ h1, h2 {
 .header_detail {
   position: relative;
   border-bottom: 1px solid #b4bcc5;
+  height: 48px;
 
   h1 {
     font-size: 18px;
-    line-height: 48px;
+    line-height: 52px;
     color: #3a4a58;
   }
 
@@ -1552,5 +1610,74 @@ h1, h2 {
     margin-bottom: 14px;
     font-size: 17px;
   }
+
+}
+
+/* 아이디어 180이란 */
+.main_180 {
+  padding: 0 15px 58px;
+}
+
+.box_info180 {
+  padding-top: 35px;
+
+  & + .box_info180 {
+    border-top: 1px solid #d1d6dc;
+  }
+
+  .tit {
+    display: block;
+    margin-bottom: 14px;
+    font-size: 15px;
+  }
+
+  .txt {
+    font-size: 13px;
+    color: #888;
+    line-height: 1.5;
+  }
+
+  .list_step {
+
+    li {
+      position: relative;
+      min-height: 100px;
+
+      & + li {
+        margin-top: 20px;
+      }
+    }
+
+    dt, dd {
+      display: inline-block;
+      vertical-align: top;
+    }
+
+    dt {
+      position: absolute;
+      top: 0;
+      left: 0;
+
+      img {
+        width: 100px;
+      }
+    }
+
+    dd {
+      padding: 11px 0 0 122px;
+
+      .tit {
+        margin-bottom: 10px;
+        font-size: 13px;
+      }
+
+      .txt {
+        font-size: 13px;
+        color: #888;
+      }
+
+    }
+  }
+
 
 }

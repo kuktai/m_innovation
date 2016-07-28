@@ -6,6 +6,7 @@
 <link type="text/css" rel="stylesheet" href="./resources/css/innovation.css">
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.29/angular.min.js"></script>
 <script type="text/javascript" src="http://10.65.2.105:7777/resources/js/lib/jquery-1.8.3.min.js"></script>
+<script type="text/javascript" src="http://10.65.2.105:7777/resources/js/lib/idangerous.swiper.min.js"></script>
 <title>360플래닛 - 라이프플래닛</title>
 </head>
 <body>
@@ -16,7 +17,17 @@
 	<hr />
 
 	<div class="visual_main">
-		<img src="./resources/images/innovation/img_sample.png" alt="" style="width:100%" />
+		<div id="slidewrap" class="slidewrap">
+            <ul class="swiper-wrapper">
+                <li class="swiper-slide">
+                    <img src="./resources/images/innovation/img_main_visual_01.png" style="width:100%" alt="" />
+                </li>
+                <li class="swiper-slide">
+                    <img src="./resources/images/innovation/img_main_visual_02.png" style="width:100%" alt="" />
+                </li>
+            </ul>
+            <div class="slidebtn dot_box"></div>
+        </div>
 	</div>
 
 	<ul class="list_count_main clearfix">
@@ -170,7 +181,12 @@
 
 <script>
 
-
+	var slide_box = new Swiper('#slidewrap',{
+	         pagination: '#slidewrap .dot_box',
+	         loop: true,
+	         autoplay: 3000
+         }
+    );
 	
 
 	$(function(){
@@ -209,25 +225,5 @@
 	});
 
 </script>
-<style>
-
-	.scroll_stop {
-		position: fixed;
-	}
-	.menuList_bg{
-	    display: none;    
-		position: fixed;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-		z-index: 99;
-		background-color: #000;
-		opacity: .65;
-		touch-action: none;
-		/*transform: translate3d(0px, 0px, 0px);*/
-	}
-
-</style>
 </body>
 </html>
